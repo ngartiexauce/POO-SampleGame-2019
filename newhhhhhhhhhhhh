@@ -1,0 +1,21 @@
+	private static TimerTask newAttaque_Aleatoire_Runnable() {
+		return new Attaque_Aleatoire_Runnable() {
+			@Override
+			public void attaquer_Aleatoire() {
+				 System.out.println("Tour");
+				 tour_joueur = false;
+				 for(int i=0; i<liste_Ducs.size(); i++) {
+					 int indice_Duc_attaquant = liste_Ducs.get(i);
+					 if(indice_Duc_attaquant !=0) {
+						 attaque_alleatoire_duks_adverses(indice_Duc_attaquant);
+					 }
+				 }
+				 nombre_de_tours++;
+			    try {
+			        Thread.sleep(5000);
+			      } catch (InterruptedException e) {
+			        e.printStackTrace();
+			      }
+			}
+		};
+	}
